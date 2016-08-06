@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C64BFD1D1D54F86D002C5502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BFD1C1D54F86D002C5502 /* AppDelegate.swift */; };
-		C64BFD1F1D54F86D002C5502 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BFD1E1D54F86D002C5502 /* FirstViewController.swift */; };
-		C64BFD211D54F86D002C5502 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BFD201D54F86D002C5502 /* SecondViewController.swift */; };
+		C64BFD1F1D54F86D002C5502 /* FindBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BFD1E1D54F86D002C5502 /* FindBoxViewController.swift */; };
+		C64BFD211D54F86D002C5502 /* TravelWODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BFD201D54F86D002C5502 /* TravelWODViewController.swift */; };
 		C64BFD241D54F86D002C5502 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64BFD221D54F86D002C5502 /* Main.storyboard */; };
 		C64BFD261D54F86D002C5502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64BFD251D54F86D002C5502 /* Assets.xcassets */; };
 		C64BFD291D54F86D002C5502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */; };
@@ -19,8 +19,8 @@
 /* Begin PBXFileReference section */
 		C64BFD191D54F86D002C5502 /* SwoleMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwoleMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64BFD1C1D54F86D002C5502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C64BFD1E1D54F86D002C5502 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C64BFD201D54F86D002C5502 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		C64BFD1E1D54F86D002C5502 /* FindBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindBoxViewController.swift; sourceTree = "<group>"; };
+		C64BFD201D54F86D002C5502 /* TravelWODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelWODViewController.swift; sourceTree = "<group>"; };
 		C64BFD231D54F86D002C5502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C64BFD251D54F86D002C5502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C64BFD281D54F86D002C5502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				C64BFD1C1D54F86D002C5502 /* AppDelegate.swift */,
-				C64BFD1E1D54F86D002C5502 /* FirstViewController.swift */,
-				C64BFD201D54F86D002C5502 /* SecondViewController.swift */,
+				C64BFD1E1D54F86D002C5502 /* FindBoxViewController.swift */,
+				C64BFD201D54F86D002C5502 /* TravelWODViewController.swift */,
 				C64BFD221D54F86D002C5502 /* Main.storyboard */,
 				C64BFD251D54F86D002C5502 /* Assets.xcassets */,
 				C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */,
@@ -148,9 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C64BFD211D54F86D002C5502 /* SecondViewController.swift in Sources */,
+				C64BFD211D54F86D002C5502 /* TravelWODViewController.swift in Sources */,
 				C64BFD1D1D54F86D002C5502 /* AppDelegate.swift in Sources */,
-				C64BFD1F1D54F86D002C5502 /* FirstViewController.swift in Sources */,
+				C64BFD1F1D54F86D002C5502 /* FindBoxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +302,7 @@
 				C64BFD2F1D54F86D002C5502 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
