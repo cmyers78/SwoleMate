@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import MapKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    
+    let manager = CLLocationManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        manager.delegate = self
+        manager.distanceFilter = kCLDistanceFilterNone
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.startUpdatingLocation()
+        
         // Override point for customization after application launch.
         return true
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        self.manager.startUpdatingLocation()
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-import CoreLocation
 
 class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     

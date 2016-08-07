@@ -8,10 +8,8 @@
 
 import UIKit
 import MapKit
-import CoreLocation
 
 class APIController: NSObject, CLLocationManagerDelegate  {
-    
     
     
     let session = NSURLSession.sharedSession()
