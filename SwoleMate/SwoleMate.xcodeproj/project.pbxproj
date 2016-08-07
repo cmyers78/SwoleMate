@@ -14,6 +14,11 @@
 		C64BFD261D54F86D002C5502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64BFD251D54F86D002C5502 /* Assets.xcassets */; };
 		C64BFD291D54F86D002C5502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */; };
 		C64BFD311D54F875002C5502 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64BFD301D54F875002C5502 /* MapKit.framework */; };
+		C6D198461D57C5D900451F05 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198451D57C5D900451F05 /* APIController.swift */; };
+		C6D1984A1D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198471D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift */; };
+		C6D1984B1D57C5E900451F05 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198481D57C5E900451F05 /* DataStorage.swift */; };
+		C6D1984C1D57C5E900451F05 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198491D57C5E900451F05 /* Box.swift */; };
+		C6D1984E1D57C5F700451F05 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D1984D1D57C5F700451F05 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		C64BFD281D54F86D002C5502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C64BFD2A1D54F86D002C5502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64BFD301D54F875002C5502 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C6D198451D57C5D900451F05 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		C6D198471D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBoxMKPointAnnotation.swift; sourceTree = "<group>"; };
+		C6D198481D57C5E900451F05 /* DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		C6D198491D57C5E900451F05 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		C6D1984D1D57C5F700451F05 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +71,13 @@
 			isa = PBXGroup;
 			children = (
 				C64BFD1C1D54F86D002C5502 /* AppDelegate.swift */,
+				C6D1984D1D57C5F700451F05 /* Constants.swift */,
 				C64BFD1E1D54F86D002C5502 /* FindBoxViewController.swift */,
 				C64BFD201D54F86D002C5502 /* TravelWODViewController.swift */,
+				C6D198451D57C5D900451F05 /* APIController.swift */,
+				C6D198471D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift */,
+				C6D198481D57C5E900451F05 /* DataStorage.swift */,
+				C6D198491D57C5E900451F05 /* Box.swift */,
 				C64BFD221D54F86D002C5502 /* Main.storyboard */,
 				C64BFD251D54F86D002C5502 /* Assets.xcassets */,
 				C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */,
@@ -148,9 +163,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D1984A1D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift in Sources */,
+				C6D1984C1D57C5E900451F05 /* Box.swift in Sources */,
+				C6D198461D57C5D900451F05 /* APIController.swift in Sources */,
 				C64BFD211D54F86D002C5502 /* TravelWODViewController.swift in Sources */,
+				C6D1984B1D57C5E900451F05 /* DataStorage.swift in Sources */,
 				C64BFD1D1D54F86D002C5502 /* AppDelegate.swift in Sources */,
 				C64BFD1F1D54F86D002C5502 /* FindBoxViewController.swift in Sources */,
+				C6D1984E1D57C5F700451F05 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

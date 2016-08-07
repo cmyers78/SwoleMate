@@ -37,6 +37,9 @@
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Rv-B6-ayx">
                                 <rect key="frame" x="0.0" y="68" width="600" height="483"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="sF9-HV-nCQ"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IX-kU-2Gj">
                                 <rect key="frame" x="546" y="32" width="24" height="24"/>
@@ -74,6 +77,9 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="FIND MY BOX" image="map" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="mapView" destination="8Rv-B6-ayx" id="x2e-Vm-JFt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
