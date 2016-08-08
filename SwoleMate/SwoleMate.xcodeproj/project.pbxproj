@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C62FE8551D58F0DB005D5CC5 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62FE8541D58F0DB005D5CC5 /* Workout.swift */; };
 		C64BFD1D1D54F86D002C5502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BFD1C1D54F86D002C5502 /* AppDelegate.swift */; };
 		C64BFD1F1D54F86D002C5502 /* FindBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BFD1E1D54F86D002C5502 /* FindBoxViewController.swift */; };
 		C64BFD211D54F86D002C5502 /* TravelWODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64BFD201D54F86D002C5502 /* TravelWODViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C62FE8541D58F0DB005D5CC5 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		C64BFD191D54F86D002C5502 /* SwoleMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwoleMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64BFD1C1D54F86D002C5502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C64BFD1E1D54F86D002C5502 /* FindBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindBoxViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				C6D198471D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift */,
 				C6D198481D57C5E900451F05 /* DataStorage.swift */,
 				C6D198491D57C5E900451F05 /* Box.swift */,
+				C62FE8541D58F0DB005D5CC5 /* Workout.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				C64BFD211D54F86D002C5502 /* TravelWODViewController.swift in Sources */,
 				C6D1984B1D57C5E900451F05 /* DataStorage.swift in Sources */,
 				C698BB521D584925007E84D1 /* NotesViewController.swift in Sources */,
+				C62FE8551D58F0DB005D5CC5 /* Workout.swift in Sources */,
 				C64BFD1D1D54F86D002C5502 /* AppDelegate.swift in Sources */,
 				C64BFD1F1D54F86D002C5502 /* FindBoxViewController.swift in Sources */,
 				C698BB541D584933007E84D1 /* AboutViewController.swift in Sources */,
