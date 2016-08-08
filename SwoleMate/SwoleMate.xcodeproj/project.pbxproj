@@ -15,6 +15,9 @@
 		C64BFD261D54F86D002C5502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64BFD251D54F86D002C5502 /* Assets.xcassets */; };
 		C64BFD291D54F86D002C5502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */; };
 		C64BFD311D54F875002C5502 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64BFD301D54F875002C5502 /* MapKit.framework */; };
+		C68A2D691D5936F3002D2A41 /* tw-aero.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C68A2D661D5936F3002D2A41 /* tw-aero.mp4 */; };
+		C68A2D6A1D5936F3002D2A41 /* tw-couch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C68A2D671D5936F3002D2A41 /* tw-couch.mp4 */; };
+		C68A2D6B1D5936F3002D2A41 /* tw-wallwalk.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C68A2D681D5936F3002D2A41 /* tw-wallwalk.mp4 */; };
 		C698BB501D58425C007E84D1 /* DESTRUCCION.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C698BB4F1D58425C007E84D1 /* DESTRUCCION.ttf */; };
 		C698BB521D584925007E84D1 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698BB511D584925007E84D1 /* NotesViewController.swift */; };
 		C698BB541D584933007E84D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698BB531D584933007E84D1 /* AboutViewController.swift */; };
@@ -36,6 +39,9 @@
 		C64BFD281D54F86D002C5502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C64BFD2A1D54F86D002C5502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64BFD301D54F875002C5502 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C68A2D661D5936F3002D2A41 /* tw-aero.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tw-aero.mp4"; sourceTree = "<group>"; };
+		C68A2D671D5936F3002D2A41 /* tw-couch.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tw-couch.mp4"; sourceTree = "<group>"; };
+		C68A2D681D5936F3002D2A41 /* tw-wallwalk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tw-wallwalk.mp4"; sourceTree = "<group>"; };
 		C698BB4F1D58425C007E84D1 /* DESTRUCCION.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DESTRUCCION.ttf; sourceTree = "<group>"; };
 		C698BB511D584925007E84D1 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		C698BB531D584933007E84D1 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +90,9 @@
 				C698BB4D1D583E74007E84D1 /* Model */,
 				C64BFD221D54F86D002C5502 /* Main.storyboard */,
 				C64BFD251D54F86D002C5502 /* Assets.xcassets */,
+				C68A2D661D5936F3002D2A41 /* tw-aero.mp4 */,
+				C68A2D671D5936F3002D2A41 /* tw-couch.mp4 */,
+				C68A2D681D5936F3002D2A41 /* tw-wallwalk.mp4 */,
 				C698BB4F1D58425C007E84D1 /* DESTRUCCION.ttf */,
 				C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */,
 				C64BFD2A1D54F86D002C5502 /* Info.plist */,
@@ -179,9 +188,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64BFD291D54F86D002C5502 /* LaunchScreen.storyboard in Resources */,
+				C68A2D6A1D5936F3002D2A41 /* tw-couch.mp4 in Resources */,
+				C68A2D6B1D5936F3002D2A41 /* tw-wallwalk.mp4 in Resources */,
 				C64BFD261D54F86D002C5502 /* Assets.xcassets in Resources */,
 				C698BB501D58425C007E84D1 /* DESTRUCCION.ttf in Resources */,
 				C64BFD241D54F86D002C5502 /* Main.storyboard in Resources */,
+				C68A2D691D5936F3002D2A41 /* tw-aero.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
