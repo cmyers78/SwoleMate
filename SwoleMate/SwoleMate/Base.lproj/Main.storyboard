@@ -140,7 +140,7 @@
         <!--ABOUT-->
         <scene sceneID="xuL-xj-t2a">
             <objects>
-                <viewController id="HUV-HK-0aa" sceneMemberID="viewController">
+                <viewController id="HUV-HK-0aa" customClass="AboutViewController" customModule="SwoleMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="61x-dC-0oe"/>
                         <viewControllerLayoutGuide type="bottom" id="CjP-HI-UVs"/>
@@ -159,7 +159,7 @@
         <!--NOTES-->
         <scene sceneID="vAt-us-oGp">
             <objects>
-                <viewController id="rfg-Pv-sgS" sceneMemberID="viewController">
+                <viewController id="rfg-Pv-sgS" customClass="NotesViewController" customModule="SwoleMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eF1-Ki-cgr"/>
                         <viewControllerLayoutGuide type="bottom" id="aoL-eD-6L0"/>

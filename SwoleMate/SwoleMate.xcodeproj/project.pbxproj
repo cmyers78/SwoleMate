@@ -15,6 +15,8 @@
 		C64BFD291D54F86D002C5502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */; };
 		C64BFD311D54F875002C5502 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64BFD301D54F875002C5502 /* MapKit.framework */; };
 		C698BB501D58425C007E84D1 /* DESTRUCCION.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C698BB4F1D58425C007E84D1 /* DESTRUCCION.ttf */; };
+		C698BB521D584925007E84D1 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698BB511D584925007E84D1 /* NotesViewController.swift */; };
+		C698BB541D584933007E84D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698BB531D584933007E84D1 /* AboutViewController.swift */; };
 		C6D198461D57C5D900451F05 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198451D57C5D900451F05 /* APIController.swift */; };
 		C6D1984A1D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198471D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift */; };
 		C6D1984B1D57C5E900451F05 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198481D57C5E900451F05 /* DataStorage.swift */; };
@@ -33,6 +35,8 @@
 		C64BFD2A1D54F86D002C5502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64BFD301D54F875002C5502 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C698BB4F1D58425C007E84D1 /* DESTRUCCION.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DESTRUCCION.ttf; sourceTree = "<group>"; };
+		C698BB511D584925007E84D1 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		C698BB531D584933007E84D1 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C6D198451D57C5D900451F05 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		C6D198471D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBoxMKPointAnnotation.swift; sourceTree = "<group>"; };
 		C6D198481D57C5E900451F05 /* DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			children = (
 				C64BFD1E1D54F86D002C5502 /* FindBoxViewController.swift */,
 				C64BFD201D54F86D002C5502 /* TravelWODViewController.swift */,
+				C698BB511D584925007E84D1 /* NotesViewController.swift */,
+				C698BB531D584933007E84D1 /* AboutViewController.swift */,
 				C6D198451D57C5D900451F05 /* APIController.swift */,
 			);
 			name = Controller;
@@ -188,8 +194,10 @@
 				C6D198461D57C5D900451F05 /* APIController.swift in Sources */,
 				C64BFD211D54F86D002C5502 /* TravelWODViewController.swift in Sources */,
 				C6D1984B1D57C5E900451F05 /* DataStorage.swift in Sources */,
+				C698BB521D584925007E84D1 /* NotesViewController.swift in Sources */,
 				C64BFD1D1D54F86D002C5502 /* AppDelegate.swift in Sources */,
 				C64BFD1F1D54F86D002C5502 /* FindBoxViewController.swift in Sources */,
+				C698BB541D584933007E84D1 /* AboutViewController.swift in Sources */,
 				C6D1984E1D57C5F700451F05 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
