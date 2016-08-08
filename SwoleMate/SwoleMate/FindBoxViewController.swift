@@ -29,6 +29,8 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.findUserLocation()
         
     }
+    
+    // MARK : Custom Functions
 
     func findUserLocation() {
         
@@ -43,10 +45,31 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func dropPin() {
         print("drop pin called")
-        for box in DataStorage.sharedInstance.boxesArray {
+        
+        if DataStorage.sharedInstance.numberOfBoxes() > 0 {
+            for box in DataStorage.sharedInstance.boxesArray {
+                
+                self.addPin(box.boxLat, pinLong: box.boxLong, title: box.boxName, address: box.boxAddressStreet + " " + box.boxAddressCSZ)
+            }
+        } else {
             
-            self.addPin(box.boxLat, pinLong: box.boxLong, title: box.boxName, address: box.boxAddressStreet + " " + box.boxAddressCSZ)
+            self.alert()
         }
+    }
+    
+    func alert() {
+        
+        let alert = UIAlertController(title: "GYM NOT FOUND", message: "There are no gyms in your area. Try our Travel WOD.", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "OK",
+                                         style: .Default) {
+                                            (action) in
+        }
+        
+        // Add the cancel action
+        alert.addAction(cancelAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK : Annotations
@@ -63,7 +86,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
 
     
-    // Delegate methods
+    // MARK: Delegate methods
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         //self.locationManager.startUpdatingLocation()
@@ -147,6 +170,8 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             }
         }
     }
+    
+    // MARK : Annotation-related Functions
     
     func getDirections() {
         print("button tapped")

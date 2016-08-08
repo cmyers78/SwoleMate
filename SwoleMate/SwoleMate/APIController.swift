@@ -18,7 +18,7 @@ class APIController: NSObject, CLLocationManagerDelegate  {
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = "crossfit"
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.4, longitudeDelta: 0.4)
+        let span = MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3)
         let coordinate = CLLocationCoordinate2DMake(lat, long)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         
