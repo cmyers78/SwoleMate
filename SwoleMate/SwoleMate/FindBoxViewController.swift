@@ -99,7 +99,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if locations.count > 0 {
-            let location = locations.first
+            let location = locations.last
             print(location?.coordinate.latitude)
             print(location?.coordinate.longitude)
             let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
@@ -208,6 +208,8 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBAction func reloadBoxesTapped(sender: UIButton) {
         
         DataStorage.sharedInstance.removeBoxes()
+        
+        self.mapView.setCenterCoordinate(mapView.region.center, animated: true)
         
         if let findNew = locationManager.location {
             
