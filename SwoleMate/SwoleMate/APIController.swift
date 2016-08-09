@@ -47,8 +47,13 @@ class APIController: NSObject, CLLocationManagerDelegate  {
                         theBox.boxURL = webAddress
                     }
                     
+                    
                     if let test = item.placemark.addressDictionary?["FormattedAddressLines"] as? NSArray{
-                        if test.count == 3 {
+                        
+                        if test.count < 3 {
+                            //Do Nothing?
+                        }
+                        else if test.count == 3 {
                             
                             theBox.boxAddressStreet = test[0] as! String
                             theBox.boxAddressCSZ = test[1] as! String
