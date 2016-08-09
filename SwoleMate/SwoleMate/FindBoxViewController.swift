@@ -37,9 +37,12 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let status = CLAuthorizationStatus.AuthorizedAlways
         
         if status != .Denied {
+            self.locationManager.startUpdatingLocation()
             self.mapView.showsUserLocation = true
             self.locationManager.requestLocation()
             print(locationManager.location)
+            
+            self.locationManager.stopUpdatingLocation()
         }
     }
     
@@ -89,7 +92,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     // MARK: Delegate methods
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        //self.locationManager.startUpdatingLocation()
+        
         self.findUserLocation()
     }
     
@@ -196,6 +199,29 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         print(error.localizedDescription)
     }
 
+    @IBAction func findUserTapped(sender: UIButton) {
+        
+        self.findUserLocation()
+        
+    }
+    
+    @IBAction func reloadBoxesTapped(sender: UIButton) {
+        
+        DataStorage.sharedInstance.removeBoxes()
+        
+        if let findNew = locationManager.location {
+            
+            let lat = findNew.coordinate.latitude
+            let longitude = findNew.coordinate.longitude
+            
+            
+            controller.findMKBox(lat, long: longitude)
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.dropPin), name: kNOTIFY, object: nil)
+        
+    }
+    
 
 }
 

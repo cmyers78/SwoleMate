@@ -50,10 +50,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IX-kU-2Gj">
                                 <rect key="frame" x="546" y="32" width="24" height="24"/>
                                 <state key="normal" image="arrow"/>
+                                <connections>
+                                    <action selector="findUserTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="sHY-7m-QyH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxD-0L-LS0">
                                 <rect key="frame" x="30" y="32" width="24" height="24"/>
                                 <state key="normal" image="refresh"/>
+                                <connections>
+                                    <action selector="reloadBoxesTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="qeZ-9U-auP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWOLE MATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csh-72-Imo">
                                 <rect key="frame" x="213" y="29" width="173.5" height="30"/>
@@ -211,22 +217,52 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwM-xW-KHl">
+                                <rect key="frame" x="20" y="146" width="560" height="38.5"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6I-Ns-HCX">
+                                <rect key="frame" x="247" y="481" width="105" height="30"/>
+                                <state key="normal" title="Click For Demo"/>
+                                <connections>
+                                    <action selector="videoTapped:" destination="z8J-al-0yt" eventType="touchUpInside" id="OdI-zC-8Tq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qrN-yi-KGE" firstAttribute="centerX" secondItem="vkz-D2-7sQ" secondAttribute="centerX" id="2vB-vV-tCU"/>
                             <constraint firstAttribute="trailing" secondItem="qrN-yi-KGE" secondAttribute="trailing" constant="20" id="Ccb-gJ-zlt"/>
                             <constraint firstItem="qrN-yi-KGE" firstAttribute="leading" secondItem="vkz-D2-7sQ" secondAttribute="leading" constant="20" id="JN0-Y5-ZJr"/>
+                            <constraint firstItem="IpL-Tk-jMF" firstAttribute="top" secondItem="c6I-Ns-HCX" secondAttribute="bottom" constant="40" id="KXb-me-olx"/>
+                            <constraint firstItem="UwM-xW-KHl" firstAttribute="leading" secondItem="vkz-D2-7sQ" secondAttribute="leading" constant="20" id="lxy-dl-1rN"/>
                             <constraint firstItem="qrN-yi-KGE" firstAttribute="top" secondItem="HGp-6u-Z3U" secondAttribute="bottom" constant="20" id="mkk-6v-Iw7"/>
+                            <constraint firstItem="c6I-Ns-HCX" firstAttribute="centerX" secondItem="vkz-D2-7sQ" secondAttribute="centerX" id="msn-Gg-s4B"/>
+                            <constraint firstAttribute="trailing" secondItem="UwM-xW-KHl" secondAttribute="trailing" constant="20" id="sEr-4Z-A9v"/>
+                            <constraint firstItem="UwM-xW-KHl" firstAttribute="top" secondItem="qrN-yi-KGE" secondAttribute="bottom" constant="40" id="w4P-eF-jFg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="workDescLabel" destination="UwM-xW-KHl" id="MWe-wm-iTa"/>
                         <outlet property="workoutNameLabel" destination="qrN-yi-KGE" id="3UK-Wh-Vq7"/>
+                        <segue destination="xia-jY-Rsd" kind="show" identifier="videoSegue" id="mQ7-YQ-4yn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEz-49-QVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="1083"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="56U-ry-Wk8">
+            <objects>
+                <avPlayerViewController hidesBottomBarWhenPushed="YES" videoGravity="AVLayerVideoGravityResizeAspect" id="xia-jY-Rsd" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHO-tc-oNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="1835"/>
         </scene>
         <!--ABOUT-->
         <scene sceneID="xuL-xj-t2a">
@@ -237,11 +273,101 @@
                         <viewControllerLayoutGuide type="bottom" id="CjP-HI-UVs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="553-8k-tfh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dKB-wO-qZt">
+                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swole Mate v 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Ks-oXI">
+                                <rect key="frame" x="20" y="50" width="374" height="39"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                <color key="textColor" red="0.027739357178142222" green="0.028823288209900853" blue="0.42117387820512819" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Thanks To:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi0-yv-TCo">
+                                <rect key="frame" x="20" y="109" width="374" height="32"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                <color key="textColor" red="0.027739357178142222" green="0.028823288209900853" blue="0.42117387820512819" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bethanie Werner" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYL-ua-pH5">
+                                <rect key="frame" x="20" y="151" width="374" height="32"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
+                                <color key="textColor" red="0.027739357178142222" green="0.028823288209900853" blue="0.42117387820512819" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CrossFit Sandy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH8-OB-was">
+                                <rect key="frame" x="20" y="191" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <color key="textColor" red="0.027739357178142222" green="0.028823288209900853" blue="0.42117387820512819" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michelle Van Dyke" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EX1-wU-vox">
+                                <rect key="frame" x="20" y="238.5" width="374" height="32"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
+                                <color key="textColor" red="0.027739357178142222" green="0.028823288209900853" blue="0.42117387820512819" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CrossFit Mouse Trap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4k-sW-kMv">
+                                <rect key="frame" x="20" y="278.5" width="374" height="28"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <color key="textColor" red="0.027739357178142222" green="0.028823288209900853" blue="0.42117387820512819" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lindsey Williams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvS-yN-FB6">
+                                <rect key="frame" x="20" y="326.5" width="374" height="32"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
+                                <color key="textColor" red="0.027739357178142222" green="0.028823288209900853" blue="0.42117387820512819" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CrossFit Loganville" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDF-xb-dzM">
+                                <rect key="frame" x="20" y="366.5" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <color key="textColor" red="0.027739357178142222" green="0.028823288209900853" blue="0.42117387820512819" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O4k-sW-kMv" secondAttribute="trailing" constant="20" id="1kh-oE-rq6"/>
+                            <constraint firstAttribute="trailing" secondItem="WvS-yN-FB6" secondAttribute="trailing" constant="20" id="595-R5-yY0"/>
+                            <constraint firstItem="QYL-ua-pH5" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" constant="20" id="6yR-ab-1vh"/>
+                            <constraint firstItem="jMN-Ks-oXI" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" constant="20" id="7jG-Bx-Mih"/>
+                            <constraint firstItem="BH8-OB-was" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" constant="20" id="9VB-6H-1zR"/>
+                            <constraint firstAttribute="trailing" secondItem="dKB-wO-qZt" secondAttribute="trailing" id="E4O-aC-Odm"/>
+                            <constraint firstItem="BH8-OB-was" firstAttribute="top" secondItem="QYL-ua-pH5" secondAttribute="bottom" constant="8" id="Ebj-x6-BIR"/>
+                            <constraint firstItem="Pi0-yv-TCo" firstAttribute="top" secondItem="jMN-Ks-oXI" secondAttribute="bottom" constant="20" id="IAt-T9-z0r"/>
+                            <constraint firstItem="dKB-wO-qZt" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" id="IfK-ES-RVc"/>
+                            <constraint firstItem="dKB-wO-qZt" firstAttribute="top" secondItem="jMN-Ks-oXI" secondAttribute="bottom" constant="-141" id="Lqr-zq-Hi9"/>
+                            <constraint firstAttribute="trailing" secondItem="EX1-wU-vox" secondAttribute="trailing" constant="20" id="M8l-eD-ioB"/>
+                            <constraint firstItem="WvS-yN-FB6" firstAttribute="top" secondItem="O4k-sW-kMv" secondAttribute="bottom" constant="20" id="Ncy-bW-SPR"/>
+                            <constraint firstItem="EX1-wU-vox" firstAttribute="top" secondItem="BH8-OB-was" secondAttribute="bottom" constant="20" id="OpM-bp-NMU"/>
+                            <constraint firstItem="EX1-wU-vox" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" constant="20" id="Q5O-U4-v0E"/>
+                            <constraint firstItem="rDF-xb-dzM" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" constant="20" id="UYQ-yt-umR"/>
+                            <constraint firstAttribute="trailing" secondItem="QYL-ua-pH5" secondAttribute="trailing" constant="20" id="VBp-o0-DVb"/>
+                            <constraint firstItem="QYL-ua-pH5" firstAttribute="top" secondItem="Pi0-yv-TCo" secondAttribute="bottom" constant="10" id="fSZ-Jg-G3n"/>
+                            <constraint firstAttribute="trailing" secondItem="Pi0-yv-TCo" secondAttribute="trailing" constant="20" id="g1H-b1-79w"/>
+                            <constraint firstItem="O4k-sW-kMv" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" constant="20" id="gsG-gZ-MJx"/>
+                            <constraint firstItem="WvS-yN-FB6" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" constant="20" id="l0r-UD-zBE"/>
+                            <constraint firstItem="rDF-xb-dzM" firstAttribute="top" secondItem="WvS-yN-FB6" secondAttribute="bottom" constant="8" id="oUZ-OO-4T9"/>
+                            <constraint firstAttribute="trailing" secondItem="rDF-xb-dzM" secondAttribute="trailing" constant="20" id="p1K-Ka-xVV"/>
+                            <constraint firstAttribute="trailing" secondItem="BH8-OB-was" secondAttribute="trailing" constant="20" id="sqd-3D-igr"/>
+                            <constraint firstItem="O4k-sW-kMv" firstAttribute="top" secondItem="EX1-wU-vox" secondAttribute="bottom" constant="8" id="ssQ-eN-Yqn"/>
+                            <constraint firstItem="dKB-wO-qZt" firstAttribute="top" secondItem="61x-dC-0oe" secondAttribute="bottom" id="tEo-EF-vTH"/>
+                            <constraint firstItem="Pi0-yv-TCo" firstAttribute="leading" secondItem="553-8k-tfh" secondAttribute="leading" constant="20" id="vLI-zy-D4D"/>
+                            <constraint firstItem="jMN-Ks-oXI" firstAttribute="top" secondItem="61x-dC-0oe" secondAttribute="bottom" constant="30" id="vp6-Ui-ATl"/>
+                            <constraint firstItem="CjP-HI-UVs" firstAttribute="top" secondItem="dKB-wO-qZt" secondAttribute="bottom" id="wGb-Mk-hrw"/>
+                            <constraint firstAttribute="trailing" secondItem="jMN-Ks-oXI" secondAttribute="trailing" constant="20" id="xiv-T8-M3K"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lqr-zq-Hi9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="ABOUT" image="about" id="sjU-j6-HZ4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzD-Al-Dmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,6 +436,7 @@
     <resources>
         <image name="about" width="24" height="24"/>
         <image name="arrow" width="24" height="24"/>
+        <image name="creditsBackground" width="1296" height="972"/>
         <image name="map" width="24" height="24"/>
         <image name="notes" width="24" height="24"/>
         <image name="refresh" width="24" height="24"/>

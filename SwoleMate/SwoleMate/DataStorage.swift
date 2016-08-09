@@ -34,5 +34,9 @@ class DataStorage: NSObject {
         }
         return nil
     }
+    
+    func removeBoxes() {
+        self.boxesArray.removeAll()
+    }
 
 }

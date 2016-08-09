@@ -22,10 +22,10 @@ class TravelWODViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.workoutArray.append(Workout(name: "The Couch Stretch", workDesc: "The couch stretch involves pressing your foot...", video: "tw-couch", category: "Stretching Exercise", image: "couch"))
+        self.workoutArray.append(Workout(name: "The Couch Stretch", workDesc: "The couch stretch involves bending your knee onto the ground and placing the top of your foot against the wall.  If the pressure is too great, lean forward to reduce.", video: "tw-couch", category: "Stretching Exercise", image: "couch"))
         
-        self.workoutArray.append(Workout(name: "The Wall Walk", workDesc: "add description later", video: "tw-wallwalk", category: "Body Weight Exercise", image: "wallwalk"))
-        self.workoutArray.append(Workout(name: "The Aerobic Complex", workDesc: "Burpee, Broad Jump, Air Squats x 2 for 10 rounds", video: "tw-aero", category: "Aerobic Exercise", image: "aero"))
+        self.workoutArray.append(Workout(name: "The Wall Walk", workDesc: "From a plank position with your feet against a wall or door, slowly walk your feet up the wall.  Rest & repeat for 10 rounds.", video: "tw-wallwalk", category: "Body Weight Exercise", image: "wallwalk"))
+        self.workoutArray.append(Workout(name: "The Aerobic Complex", workDesc: "For 10 rounds, perform one Burpee, one Broad Jump, and two Air Squats.", video: "tw-aero", category: "Aerobic Exercise", image: "aero"))
         
         // Do any additional setup after loading the view, typically from a nib.
     }
