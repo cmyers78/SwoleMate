@@ -63,7 +63,25 @@ class TravelWODViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        self.theWorkout = self.workoutArray[indexPath.row]
         
+        self.performSegueWithIdentifier("workoutSegue", sender: nil)
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "workoutSegue" {
+            
+            if let controller = segue.destinationViewController as? WorkoutDetailViewController {
+                
+                controller.receivedWorkout = self.theWorkout
+            }
+                
+            else {
+                print("Your segue identifier is incorrect")
+            }
+        }
     }
     
 }

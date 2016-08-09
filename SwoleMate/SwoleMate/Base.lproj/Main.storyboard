@@ -9,6 +9,7 @@
     <customFonts key="customFonts">
         <mutableArray key="DESTRUCCION.ttf">
             <string>DESTRUCCION</string>
+            <string>DESTRUCCION</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -185,11 +186,47 @@
                     <navigationItem key="navigationItem" id="a10-hy-rQt"/>
                     <connections>
                         <outlet property="tableView" destination="49F-kS-ahB" id="bYw-y5-O5c"/>
+                        <segue destination="z8J-al-0yt" kind="show" identifier="workoutSegue" id="19u-DS-XlI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="360"/>
+        </scene>
+        <!--Workout Detail View Controller-->
+        <scene sceneID="1MN-FW-3mN">
+            <objects>
+                <viewController id="z8J-al-0yt" customClass="WorkoutDetailViewController" customModule="SwoleMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HGp-6u-Z3U"/>
+                        <viewControllerLayoutGuide type="bottom" id="IpL-Tk-jMF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vkz-D2-7sQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrN-yi-KGE">
+                                <rect key="frame" x="20" y="84" width="560" height="22.5"/>
+                                <fontDescription key="fontDescription" name="DESTRUCCION" family="DESTRUCCION" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qrN-yi-KGE" firstAttribute="centerX" secondItem="vkz-D2-7sQ" secondAttribute="centerX" id="2vB-vV-tCU"/>
+                            <constraint firstAttribute="trailing" secondItem="qrN-yi-KGE" secondAttribute="trailing" constant="20" id="Ccb-gJ-zlt"/>
+                            <constraint firstItem="qrN-yi-KGE" firstAttribute="leading" secondItem="vkz-D2-7sQ" secondAttribute="leading" constant="20" id="JN0-Y5-ZJr"/>
+                            <constraint firstItem="qrN-yi-KGE" firstAttribute="top" secondItem="HGp-6u-Z3U" secondAttribute="bottom" constant="20" id="mkk-6v-Iw7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="workoutNameLabel" destination="qrN-yi-KGE" id="3UK-Wh-Vq7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEz-49-QVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="1083"/>
         </scene>
         <!--ABOUT-->
         <scene sceneID="xuL-xj-t2a">
