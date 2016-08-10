@@ -13,35 +13,25 @@ class Box: NSObject {
     var boxName : String = ""
     var boxPhone : String = ""
     var boxURL : NSURL?
-    var boxAddressStreet : String = ""
-    var boxAddressSuite : String = ""
-    var boxAddressCSZ : String = ""
-    var boxAddressCountry : String = ""
     var boxLat : Double = 0.0
     var boxLong : Double = 0.0
+    var addressDict : NSDictionary?
+    var addressFormat : String = ""
     
     override init() {
         super.init()
         
         self.boxName = ""
         self.boxPhone = ""
-        self.boxAddressStreet = ""
-        self.boxAddressSuite = ""
-        self.boxAddressCSZ = ""
-        self.boxAddressCountry = ""
         self.boxLat = 0.0
         self.boxLong = 0.0
-        
+        self.addressFormat = ""
     
     }
     
     func logItems() {
         print(self.boxName)
         print(self.boxPhone)
-        print(self.boxAddressStreet)
-        print(self.boxAddressSuite)
-        print(self.boxAddressCSZ)
-        print(self.boxAddressCountry)
         print(self.boxLat)
         print(self.boxLong)
         print(self.boxURL)

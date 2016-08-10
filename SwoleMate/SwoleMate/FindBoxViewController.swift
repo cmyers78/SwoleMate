@@ -52,8 +52,9 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         if DataStorage.sharedInstance.numberOfBoxes() > 0 {
             for box in DataStorage.sharedInstance.boxesArray {
                 
-                self.addPin(box.boxLat, pinLong: box.boxLong, title: box.boxName, address: box.boxAddressStreet + " " + box.boxAddressCSZ)
+                self.addPin(box.boxLat, pinLong: box.boxLong, title: box.boxName, address: box.addressFormat)
             }
+            
         } else {
             
             self.alert()

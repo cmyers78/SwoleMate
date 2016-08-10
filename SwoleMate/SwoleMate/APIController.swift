@@ -48,23 +48,19 @@ class APIController: NSObject, CLLocationManagerDelegate  {
                     }
                     
                     
-                    if let test = item.placemark.addressDictionary?["FormattedAddressLines"] as? NSArray{
+                    if let test = item.placemark.addressDictionary {
                         
-                        if test.count < 3 {
-                            //Do Nothing?
-                        }
-                        else if test.count == 3 {
+                        theBox.addressDict = test
+                        
+                        if let locArray = test["FormattedAddressLines"] as? NSArray {
+                            let address = locArray.componentsJoinedByString(", ")
                             
-                            theBox.boxAddressStreet = test[0] as! String
-                            theBox.boxAddressCSZ = test[1] as! String
-                            theBox.boxAddressCountry = test[2] as! String
-                            
-                        } else {
-                            theBox.boxAddressStreet = test[0] as! String
-                            theBox.boxAddressSuite = test[1]  as! String
-                            theBox.boxAddressCSZ = test[2] as! String
-                            theBox.boxAddressCountry = test[3] as! String
+                            theBox.addressFormat = address
                         }
+                        
+                        
+                        
+                        
                         
                     }
                     
