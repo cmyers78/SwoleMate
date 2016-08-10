@@ -84,5 +84,16 @@ class TravelWODViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    @IBAction func infoCreditsTapped(sender: AnyObject) {
+        
+        performSegueWithIdentifier("creditsSegue", sender: self)
+    }
+    
+    
+    @IBAction func unwindSegue (segue: UIStoryboardSegue) {
+        
+    }
+
+    
 }
 
