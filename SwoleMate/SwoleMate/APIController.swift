@@ -58,10 +58,6 @@ class APIController: NSObject, CLLocationManagerDelegate  {
                             theBox.addressFormat = address
                         }
                         
-                        
-                        
-                        
-                        
                     }
                     
                     theBox.boxLat = item.placemark.coordinate.latitude
