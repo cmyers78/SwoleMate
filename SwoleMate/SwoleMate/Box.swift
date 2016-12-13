@@ -12,7 +12,7 @@ class Box: NSObject {
 
     var boxName : String = ""
     var boxPhone : String = ""
-    var boxURL : NSURL?
+    var boxURL : URL?
     var boxLat : Double = 0.0
     var boxLong : Double = 0.0
     var addressDict : NSDictionary?

@@ -11,9 +11,9 @@ import MapKit
 
 class APIController: NSObject, CLLocationManagerDelegate  {
     
-    let session = NSURLSession.sharedSession()
+    let session = URLSession.shared
     
-    func findMKBox(lat : Double, long: Double) {
+    func findMKBox(_ lat : Double, long: Double) {
         
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = "crossfit"
@@ -25,7 +25,7 @@ class APIController: NSObject, CLLocationManagerDelegate  {
         request.region = region
         
         let search = MKLocalSearch(request: request)
-        search.startWithCompletionHandler {
+        search.start {
             (response, error) in
             
             if let response = response {
@@ -50,10 +50,10 @@ class APIController: NSObject, CLLocationManagerDelegate  {
                     
                     if let test = item.placemark.addressDictionary {
                         
-                        theBox.addressDict = test
+                        theBox.addressDict = test as NSDictionary?
                         
                         if let locArray = test["FormattedAddressLines"] as? NSArray {
-                            let address = locArray.componentsJoinedByString(", ")
+                            let address = locArray.componentsJoined(by: ", ")
                             
                             theBox.addressFormat = address
                         }
@@ -67,7 +67,7 @@ class APIController: NSObject, CLLocationManagerDelegate  {
                     DataStorage.sharedInstance.addMKBox(theBox)
                 }
                 
-                NSNotificationCenter.defaultCenter().postNotificationName(kNOTIFY, object: nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: kNOTIFY), object: nil)
                 
             } else {
                 print("There was an error searching for: \(request.naturalLanguageQuery) error: \(error)")

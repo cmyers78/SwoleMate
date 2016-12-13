@@ -12,7 +12,7 @@ import AVKit
 
 class WorkoutDetailViewController: UIViewController, AVPlayerViewControllerDelegate {
     
-    var videoURL : NSURL?
+    var videoURL : URL?
 
     var receivedWorkout = Workout()
     
@@ -28,7 +28,7 @@ class WorkoutDetailViewController: UIViewController, AVPlayerViewControllerDeleg
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.workoutNameLabel.text = self.receivedWorkout.workoutName
@@ -37,20 +37,20 @@ class WorkoutDetailViewController: UIViewController, AVPlayerViewControllerDeleg
 
     
     
-    @IBAction func videoTapped(sender: UIButton) {
+    @IBAction func videoTapped(_ sender: UIButton) {
         
-        self.videoURL = NSBundle.mainBundle().URLForResource( self.receivedWorkout.workoutVideo, withExtension: "mp4")
+        self.videoURL = Bundle.main.url( forResource: self.receivedWorkout.workoutVideo, withExtension: "mp4")
         
-        self.performSegueWithIdentifier("videoSegue", sender: self)
+        self.performSegue(withIdentifier: "videoSegue", sender: self)
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "videoSegue" {
             
-            let destinationVC = segue.destinationViewController as! AVPlayerViewController
+            let destinationVC = segue.destination as! AVPlayerViewController
             
-            destinationVC.player = AVPlayer(URL: self.videoURL!)
+            destinationVC.player = AVPlayer(url: self.videoURL!)
         }
     }
 

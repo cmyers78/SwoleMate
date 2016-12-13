@@ -13,13 +13,13 @@ class DataStorage: NSObject {
     
     static let sharedInstance = DataStorage()
     
-    private override init() {
+    fileprivate override init() {
         
     }
     
     var boxesArray = [Box]()
     
-    func addMKBox(box : Box) {
+    func addMKBox(_ box : Box) {
         self.boxesArray.append(box)
         print(box.boxName + " MK")
     }
@@ -27,13 +27,13 @@ class DataStorage: NSObject {
     func numberOfBoxes() -> Int {
         return self.boxesArray.count
     }
-    
-    func boxesAtIndex(index : Int) -> Box? {
+    func boxesAtIndex(_ index : Int) -> Box? {
         if self.boxesArray.count >= 0 && index < self.boxesArray.count {
             return self.boxesArray[index]
         }
         return nil
     }
+    
     
     func removeBoxes() {
         self.boxesArray.removeAll()

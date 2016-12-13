@@ -30,26 +30,26 @@ class TravelWODViewController: UIViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.tableView.reloadData()
 
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.workoutArray.count
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TravelWODTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TravelWODTableViewCell
         
         self.theWorkout = self.workoutArray[indexPath.row]
         
@@ -61,19 +61,19 @@ class TravelWODViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.theWorkout = self.workoutArray[indexPath.row]
         
-        self.performSegueWithIdentifier("workoutSegue", sender: nil)
+        self.performSegue(withIdentifier: "workoutSegue", sender: nil)
         
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "workoutSegue" {
             
-            if let controller = segue.destinationViewController as? WorkoutDetailViewController {
+            if let controller = segue.destination as? WorkoutDetailViewController {
                 
                 controller.receivedWorkout = self.theWorkout
             }
@@ -84,13 +84,13 @@ class TravelWODViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    @IBAction func infoCreditsTapped(sender: AnyObject) {
+    @IBAction func infoCreditsTapped(_ sender: AnyObject) {
         
-        performSegueWithIdentifier("creditsSegue", sender: self)
+        performSegue(withIdentifier: "creditsSegue", sender: self)
     }
     
     
-    @IBAction func unwindSegue (segue: UIStoryboardSegue) {
+    @IBAction func unwindSegue (_ segue: UIStoryboardSegue) {
         
     }
 

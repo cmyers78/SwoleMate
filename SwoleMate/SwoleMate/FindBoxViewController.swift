@@ -34,9 +34,9 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
 
     func findUserLocation() {
         
-        let status = CLAuthorizationStatus.AuthorizedAlways
+        let status = CLAuthorizationStatus.authorizedAlways
         
-        if status != .Denied {
+        if status != .denied {
             self.locationManager.startUpdatingLocation()
             self.mapView.showsUserLocation = true
             self.locationManager.requestLocation()
@@ -63,22 +63,22 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func alert() {
         
-        let alert = UIAlertController(title: "GYM NOT FOUND", message: "There are no gyms in your area. Try our Travel WOD.", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "GYM NOT FOUND", message: "There are no gyms in your area. Try our Travel WOD.", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "OK",
-                                         style: .Default) {
+                                         style: .default) {
                                             (action) in
         }
         
         // Add the cancel action
         alert.addAction(cancelAction)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK : Annotations
     
-    func addPin(pinLat : Double, pinLong : Double, title : String, address : String) {
+    func addPin(_ pinLat : Double, pinLong : Double, title : String, address : String) {
         
         let location = CLLocationCoordinate2D(latitude: pinLat, longitude: pinLong)
         let annotation = CustomBoxMKPointAnnotation()
@@ -92,12 +92,12 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     // MARK: Delegate methods
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
         self.findUserLocation()
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if locations.count > 0 {
             let location = locations.last
@@ -122,17 +122,17 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             
             controller.findMKBox(lat, long: long)
         }
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.dropPin), name: kNOTIFY, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.dropPin), name: NSNotification.Name(rawValue: kNOTIFY), object: nil)
         
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         
-        if annotation.isKindOfClass(CustomBoxMKPointAnnotation) {
+        if annotation.isKind(of: CustomBoxMKPointAnnotation.self) {
             let identifier = "kettleBell"
             
-            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             
             
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
@@ -141,15 +141,15 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 
                 annotationView.canShowCallout = true
                 
-                let imageView = UIImageView(frame: CGRectMake(0, 0, 24, 24))
-                imageView.contentMode = .ScaleAspectFit
+                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+                imageView.contentMode = .scaleAspectFit
                 
                 imageView.image = UIImage(named: "kettlebellx24")
                 
                 let smallSquare = CGSize(width: 30, height: 30)
-                let button = UIButton(frame: CGRect(origin: CGPointZero, size: smallSquare))
-                button.setBackgroundImage(UIImage(named: "carX32"), forState: .Normal)
-                button.addTarget(self, action: #selector(self.getDirections), forControlEvents: .TouchUpInside)
+                let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+                button.setBackgroundImage(UIImage(named: "carX32"), for: UIControlState())
+                button.addTarget(self, action: #selector(self.getDirections), for: .touchUpInside)
                 annotationView.leftCalloutAccessoryView = button
                 
                 annotationView.image = imageView.image
@@ -160,7 +160,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         return nil
     }
     
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         //print("POPUP ANNOTATE")
         // I need to set selectedPin equal to the pin's coordinates
@@ -182,7 +182,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         let mapItem = MKMapItem(placemark: self.selectedPin!)
         mapItem.name = self.mapName
-        if let lat = self.selectedPin?.coordinate.latitude, long = self.selectedPin?.coordinate.longitude {
+        if let lat = self.selectedPin?.coordinate.latitude, let long = self.selectedPin?.coordinate.longitude {
             
             let regionDistance : CLLocationDistance = 7500
             
@@ -190,27 +190,27 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             
             let regionSpan = MKCoordinateRegionMakeWithDistance(coord, regionDistance, regionDistance)
             
-            let options = [MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span), MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving ]
+            let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span), MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving ] as [String : Any]
             
-            mapItem.openInMapsWithLaunchOptions(options)
+            mapItem.openInMaps(launchOptions: options)
         }
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
 
-    @IBAction func findUserTapped(sender: UIButton) {
+    @IBAction func findUserTapped(_ sender: UIButton) {
         
         self.findUserLocation()
         
     }
     
-    @IBAction func reloadBoxesTapped(sender: UIButton) {
+    @IBAction func reloadBoxesTapped(_ sender: UIButton) {
         
         DataStorage.sharedInstance.removeBoxes()
         
-        self.mapView.setCenterCoordinate(mapView.region.center, animated: true)
+        self.mapView.setCenter(mapView.region.center, animated: true)
         
         if let findNew = locationManager.location {
             
@@ -221,7 +221,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             controller.findMKBox(lat, long: longitude)
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.dropPin), name: kNOTIFY, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.dropPin), name: NSNotification.Name(rawValue: kNOTIFY), object: nil)
         
     }
     

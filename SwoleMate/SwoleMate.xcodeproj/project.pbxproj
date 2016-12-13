@@ -21,8 +21,6 @@
 		C68A2D6A1D5936F3002D2A41 /* tw-couch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C68A2D671D5936F3002D2A41 /* tw-couch.mp4 */; };
 		C68A2D6B1D5936F3002D2A41 /* tw-wallwalk.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C68A2D681D5936F3002D2A41 /* tw-wallwalk.mp4 */; };
 		C698BB501D58425C007E84D1 /* DESTRUCCION.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C698BB4F1D58425C007E84D1 /* DESTRUCCION.ttf */; };
-		C698BB521D584925007E84D1 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698BB511D584925007E84D1 /* NotesViewController.swift */; };
-		C698BB541D584933007E84D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C698BB531D584933007E84D1 /* AboutViewController.swift */; };
 		C6D198461D57C5D900451F05 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198451D57C5D900451F05 /* APIController.swift */; };
 		C6D1984A1D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198471D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift */; };
 		C6D1984B1D57C5E900451F05 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D198481D57C5E900451F05 /* DataStorage.swift */; };
@@ -47,8 +45,6 @@
 		C68A2D671D5936F3002D2A41 /* tw-couch.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tw-couch.mp4"; sourceTree = "<group>"; };
 		C68A2D681D5936F3002D2A41 /* tw-wallwalk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tw-wallwalk.mp4"; sourceTree = "<group>"; };
 		C698BB4F1D58425C007E84D1 /* DESTRUCCION.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DESTRUCCION.ttf; sourceTree = "<group>"; };
-		C698BB511D584925007E84D1 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		C698BB531D584933007E84D1 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C6D198451D57C5D900451F05 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		C6D198471D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBoxMKPointAnnotation.swift; sourceTree = "<group>"; };
 		C6D198481D57C5E900451F05 /* DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
@@ -138,8 +134,6 @@
 				C64BFD1E1D54F86D002C5502 /* FindBoxViewController.swift */,
 				C64BFD201D54F86D002C5502 /* TravelWODViewController.swift */,
 				C63059C01D5A66A0005C1F40 /* WorkoutDetailViewController.swift */,
-				C698BB511D584925007E84D1 /* NotesViewController.swift */,
-				C698BB531D584933007E84D1 /* AboutViewController.swift */,
 				C6D198451D57C5D900451F05 /* APIController.swift */,
 			);
 			name = Controller;
@@ -172,12 +166,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Dragoman Developers, LLC";
 				TargetAttributes = {
 					C64BFD181D54F86D002C5502 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XYW89PFS48;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -231,11 +226,9 @@
 				C6D198461D57C5D900451F05 /* APIController.swift in Sources */,
 				C64BFD211D54F86D002C5502 /* TravelWODViewController.swift in Sources */,
 				C6D1984B1D57C5E900451F05 /* DataStorage.swift in Sources */,
-				C698BB521D584925007E84D1 /* NotesViewController.swift in Sources */,
 				C62FE8551D58F0DB005D5CC5 /* Workout.swift in Sources */,
 				C64BFD1D1D54F86D002C5502 /* AppDelegate.swift in Sources */,
 				C64BFD1F1D54F86D002C5502 /* FindBoxViewController.swift in Sources */,
-				C698BB541D584933007E84D1 /* AboutViewController.swift in Sources */,
 				C63059C11D5A66A0005C1F40 /* WorkoutDetailViewController.swift in Sources */,
 				C60483EE1D593B890024671D /* TravelWODTableViewCell.swift in Sources */,
 				C6D1984E1D57C5F700451F05 /* Constants.swift in Sources */,
@@ -278,8 +271,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -323,8 +318,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -343,6 +340,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -356,6 +354,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragomandevelopers.SwoleMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -368,6 +367,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragomandevelopers.SwoleMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
