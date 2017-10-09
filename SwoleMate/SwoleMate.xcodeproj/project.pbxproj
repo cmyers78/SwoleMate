@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5352F1421F8B40230083386A /* LocationManagerInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5352F1411F8B40230083386A /* LocationManagerInjectable.swift */; };
 		C60483EE1D593B890024671D /* TravelWODTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60483ED1D593B890024671D /* TravelWODTableViewCell.swift */; };
 		C62FE8551D58F0DB005D5CC5 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62FE8541D58F0DB005D5CC5 /* Workout.swift */; };
 		C63059C11D5A66A0005C1F40 /* WorkoutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63059C01D5A66A0005C1F40 /* WorkoutDetailViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5352F1411F8B40230083386A /* LocationManagerInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerInjectable.swift; sourceTree = "<group>"; };
 		C60483ED1D593B890024671D /* TravelWODTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelWODTableViewCell.swift; sourceTree = "<group>"; };
 		C62FE8541D58F0DB005D5CC5 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		C63059C01D5A66A0005C1F40 /* WorkoutDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5352F1401F8B3FFF0083386A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5352F1411F8B40230083386A /* LocationManagerInjectable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		C60483EF1D593B980024671D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		C64BFD1B1D54F86D002C5502 /* SwoleMate */ = {
 			isa = PBXGroup;
 			children = (
+				5352F1401F8B3FFF0083386A /* Protocols */,
 				C64BFD1C1D54F86D002C5502 /* AppDelegate.swift */,
 				C6D1984D1D57C5F700451F05 /* Constants.swift */,
 				C698BB4D1D583E74007E84D1 /* Model */,
@@ -224,6 +235,7 @@
 				C6D1984A1D57C5E900451F05 /* CustomBoxMKPointAnnotation.swift in Sources */,
 				C6D1984C1D57C5E900451F05 /* Box.swift in Sources */,
 				C6D198461D57C5D900451F05 /* APIController.swift in Sources */,
+				5352F1421F8B40230083386A /* LocationManagerInjectable.swift in Sources */,
 				C64BFD211D54F86D002C5502 /* TravelWODViewController.swift in Sources */,
 				C6D1984B1D57C5E900451F05 /* DataStorage.swift in Sources */,
 				C62FE8551D58F0DB005D5CC5 /* Workout.swift in Sources */,

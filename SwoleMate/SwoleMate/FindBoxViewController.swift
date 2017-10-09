@@ -9,23 +9,50 @@
 import UIKit
 import MapKit
 
+extension FindBoxViewController: LocationManagerInjectable {
+    
+    func set(locationManager: CLLocationManager) {
+        self.locationManager = locationManager
+        /**
+         Here you could set the value of a `var locationManager: CLLocationManager` to the value of manager
+         and then on `didSet` for the property you could call the set up function. Or you could all the setup
+         function here and use the local property rather than pass it through...There are many ways of doing it.
+         
+         Because you are performing actions using the location manager when your buttons are tapped you will
+         want to store the manager as a local property, not pass it through. If you were going to pass it through
+         though your functions would all take the manager for example:
+             func setUpCLLocationManager(_ manager: CLLocationManager)
+             func findUserLocation(_ manager: CLLocationManager)
+         */
+        setUpCLLocationManager()
+    }
+    
+    func setUpCLLocationManager() {
+        /**
+         Note I just copied and pasted your code, I actually have not worked enough with CLLocationManager to
+         know what changes you would need to make to your delegate handling but it would be a good exercise for
+         you to finish what I've started on this branch.
+         */
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.requestAlwaysAuthorization()
+    }
+}
+
 class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var selectedPin : MKPlacemark? = nil
     var mapName : String = ""
     
-    var locationManager = CLLocationManager()
-    
     let controller = APIController()
+    
+    fileprivate var locationManager: CLLocationManager?
     
     @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestAlwaysAuthorization()
+
         self.findUserLocation()
         
     }
@@ -37,12 +64,12 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let status = CLAuthorizationStatus.authorizedAlways
         
         if status != .denied {
-            self.locationManager.startUpdatingLocation()
+            locationManager?.startUpdatingLocation()
             self.mapView.showsUserLocation = true
-            self.locationManager.requestLocation()
-            print(locationManager.location)
+            locationManager?.requestLocation()
+            print(locationManager?.location)
             
-            self.locationManager.stopUpdatingLocation()
+            locationManager?.stopUpdatingLocation()
         }
     }
     
@@ -112,8 +139,8 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 //self.locationManager.startUpdatingLocation()
             }
         }
-        
-        if let loc = locationManager.location {
+    
+        if let loc = locationManager?.location {
             
             print(loc.coordinate)
             
@@ -202,6 +229,10 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
 
     @IBAction func findUserTapped(_ sender: UIButton) {
         
+        /**
+         Because of this implementation you would probably need to have the location manager instance stored
+         locally because when this button is tapped you have no way of passing the instance in.
+         */
         self.findUserLocation()
         
     }
@@ -212,7 +243,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         self.mapView.setCenter(mapView.region.center, animated: true)
         
-        if let findNew = locationManager.location {
+        if let findNew = locationManager?.location {
             
             let lat = findNew.coordinate.latitude
             let longitude = findNew.coordinate.longitude

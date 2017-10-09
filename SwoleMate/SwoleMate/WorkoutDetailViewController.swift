@@ -49,7 +49,12 @@ class WorkoutDetailViewController: UIViewController, AVPlayerViewControllerDeleg
         if segue.identifier == "videoSegue" {
             
             let destinationVC = segue.destination as! AVPlayerViewController
-            
+            /**
+             This is actually already dependency injection :) This is commonly called "property injection" though
+             would I guess be considered a type of "setter injetion". As explained on LocationManagerInjectable
+             notes it is better to use a function to set your dependencies as this allows you to make the properties
+             private. However it is actually pretty common to do it this way but it can make testing more difficult.
+             */
             destinationVC.player = AVPlayer(url: self.videoURL!)
         }
     }
