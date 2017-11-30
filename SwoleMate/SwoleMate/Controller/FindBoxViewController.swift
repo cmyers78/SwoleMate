@@ -46,7 +46,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
     }
     
-    func dropPin() {
+    @objc func dropPin() {
         print("drop pin called")
         
         if DataStorage.sharedInstance.numberOfBoxes() > 0 {
@@ -177,7 +177,7 @@ class FindBoxViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     // MARK : Annotation-related Functions
     
-    func getDirections() {
+    @objc func getDirections() {
         print("button tapped")
         
         let mapItem = MKMapItem(placemark: self.selectedPin!)

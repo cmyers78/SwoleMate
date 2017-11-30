@@ -69,19 +69,21 @@
 			children = (
 				C60483ED1D593B890024671D /* TravelWODTableViewCell.swift */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C60483F01D593BBB0024671D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C6D1984D1D57C5F700451F05 /* Constants.swift */,
 				C64BFD251D54F86D002C5502 /* Assets.xcassets */,
 				C68A2D661D5936F3002D2A41 /* tw-aero.mp4 */,
 				C68A2D671D5936F3002D2A41 /* tw-couch.mp4 */,
 				C68A2D681D5936F3002D2A41 /* tw-wallwalk.mp4 */,
 				C698BB4F1D58425C007E84D1 /* DESTRUCCION.ttf */,
+				C64BFD2A1D54F86D002C5502 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C64BFD101D54F86D002C5502 = {
@@ -104,17 +106,23 @@
 		C64BFD1B1D54F86D002C5502 /* SwoleMate */ = {
 			isa = PBXGroup;
 			children = (
+				C676C5DA1FD03B5C00A01E7D /* Storyboards */,
 				C64BFD1C1D54F86D002C5502 /* AppDelegate.swift */,
-				C6D1984D1D57C5F700451F05 /* Constants.swift */,
 				C698BB4D1D583E74007E84D1 /* Model */,
 				C60483EF1D593B980024671D /* View */,
 				C698BB4E1D583E82007E84D1 /* Controller */,
-				C64BFD221D54F86D002C5502 /* Main.storyboard */,
 				C60483F01D593BBB0024671D /* Supporting Files */,
-				C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */,
-				C64BFD2A1D54F86D002C5502 /* Info.plist */,
 			);
 			path = SwoleMate;
+			sourceTree = "<group>";
+		};
+		C676C5DA1FD03B5C00A01E7D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C64BFD221D54F86D002C5502 /* Main.storyboard */,
+				C64BFD271D54F86D002C5502 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		C698BB4D1D583E74007E84D1 /* Model */ = {
@@ -125,7 +133,7 @@
 				C6D198491D57C5E900451F05 /* Box.swift */,
 				C62FE8541D58F0DB005D5CC5 /* Workout.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C698BB4E1D583E82007E84D1 /* Controller */ = {
@@ -136,7 +144,7 @@
 				C63059C01D5A66A0005C1F40 /* WorkoutDetailViewController.swift */,
 				C6D198451D57C5D900451F05 /* APIController.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,13 +174,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Dragoman Developers, LLC";
 				TargetAttributes = {
 					C64BFD181D54F86D002C5502 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XYW89PFS48;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0910;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -266,14 +274,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -313,14 +327,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -354,7 +374,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragomandevelopers.SwoleMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -367,7 +388,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragomandevelopers.SwoleMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

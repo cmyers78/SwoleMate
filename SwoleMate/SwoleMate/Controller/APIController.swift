@@ -70,7 +70,7 @@ class APIController: NSObject, CLLocationManagerDelegate  {
                 NotificationCenter.default.post(name: Notification.Name(rawValue: kNOTIFY), object: nil)
                 
             } else {
-                print("There was an error searching for: \(request.naturalLanguageQuery) error: \(error)")
+                print("There was an error searching for: \(String(describing: request.naturalLanguageQuery)) error: \(String(describing: error))")
                 return
             }
         }

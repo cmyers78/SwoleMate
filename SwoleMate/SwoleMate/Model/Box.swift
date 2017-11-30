@@ -34,6 +34,6 @@ class Box: NSObject {
         print(self.boxPhone)
         print(self.boxLat)
         print(self.boxLong)
-        print(self.boxURL)
+        print(self.boxURL ?? "no URL")
     }
 }
