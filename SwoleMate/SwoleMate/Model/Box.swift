@@ -26,7 +26,6 @@ class Box: NSObject {
         self.boxLat = 0.0
         self.boxLong = 0.0
         self.addressFormat = ""
-    
     }
     
     func logItems() {
